@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Shouldly" Version="3.0.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdmxConv.Behaviours\EdmxConv.Behaviours.csproj" />
+    <ProjectReference Include="..\EdmxConv.Core\EdmxConv.Core.csproj" />
+    <ProjectReference Include="..\EdmxConv.Schema\EdmxConv.Schema.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SampleEdmx.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
