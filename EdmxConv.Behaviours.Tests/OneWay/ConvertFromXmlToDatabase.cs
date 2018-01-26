@@ -9,7 +9,7 @@ namespace EdmxConv.Behaviours.Tests.OneWay
 {
     public class ConvertFromXmlToDatabase
     {
-        [Fact(DisplayName = "Xml -> DB", Skip = "Fix sample XMLs")]
+        [Fact(DisplayName = "Xml -> DB")]
         public void convert_xml_to_database() =>
             With(Resources.SampleXmlEdmx)
                 .OnSuccess(sample => sample.ToXmlEdmx())

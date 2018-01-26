@@ -22,7 +22,7 @@ namespace EdmxConv.Behaviours.Tests.Circular
                 .OnSuccess(edmx => edmx.ShouldBe(Resources.SampleDatabaseEdmx));
 
 
-        [Fact(DisplayName = "DB -> Xml -> DB", Skip = "Fix sample XMLs")]
+        [Fact(DisplayName = "DB -> Xml -> DB")]
         public void convert_database_to_xml_back_and_forth() =>
             With(Resources.SampleDatabaseEdmx)
                 .Map(edmx => edmx.ToHex())
