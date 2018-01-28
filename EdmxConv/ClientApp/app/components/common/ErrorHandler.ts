@@ -12,7 +12,7 @@ export class ErrorHandler {
      * This is required for ToastsManager to work.
      * See https://stackoverflow.com/questions/41278179/anguler2-unhandled-promise-rejection-no-provider-for-viewcontainerref-in-d
      */
-    public setViewRef(vRef: ViewContainerRef) {
+    public setViewRef(vRef: ViewContainerRef): void {
         this.toastr.setRootViewContainerRef(vRef);
     }
 
@@ -34,11 +34,11 @@ export class ErrorHandler {
         }
     }
 
-    private ShowWarning(error: ErrorModel) {
+    private ShowWarning(error: ErrorModel): void {
         this.toastr.warning(error.text, "Invalid request");
     }
 
-    private ShowError(error: ErrorModel) {
+    private ShowError(error: ErrorModel): void {
         this.toastr.error(error.text, "Server error");
     }
 }
@@ -47,7 +47,7 @@ enum ErrorType { Validation, Server }
 
 class ErrorModel {
 
-    type: ErrorType;
+    type: ErrorType | undefined;
     code: number;
     text: string;
 
@@ -69,7 +69,7 @@ export class ErrorTypeHelper {
     static mapToErrorType = (status: number): ErrorType | undefined =>
         ErrorTypeHelper.is500(status) ? ErrorType.Server
             : ErrorTypeHelper.is400(status) ? ErrorType.Validation
-                : undefined;
+                : undefined
 
     static is500 = (status: number): boolean => (status - 500) >= 0;
     static is400 = (status: number): boolean => !ErrorTypeHelper.is500(status) && (status - 400) >= 0;
