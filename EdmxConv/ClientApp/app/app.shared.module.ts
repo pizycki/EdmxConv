@@ -11,6 +11,8 @@ import { ConverterComponent } from "./components/converter/index";
 import { CodeblockComponent } from "./components/codeblock/codeblock.component";
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { Config } from "./components/common/Configuration";
+import { ConvertingService } from "./components/converter/converting.service";
+import { ErrorHandler } from "./components/common/ErrorHandler";
 
 @NgModule({
     declarations: [
@@ -31,8 +33,10 @@ import { Config } from "./components/common/Configuration";
         ])
     ],
     providers: [
+        ConvertingService,
         HighlightJsService,
-        Config
+        Config,
+        ErrorHandler
     ]
 })
 export class AppModuleShared {

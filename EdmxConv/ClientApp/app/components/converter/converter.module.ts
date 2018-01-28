@@ -5,6 +5,7 @@ import { HttpModule } from "@angular/http";
 import { ConverterComponent } from "./converter.component";
 import { Config } from "../common/Configuration";
 import { ErrorHandler } from "../common/ErrorHandler";
+import { ConvertingService } from "./converting.service";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ErrorHandler } from "../common/ErrorHandler";
   ],
 
   providers: [
+    ConvertingService,
     ConverterComponent,
     Config,
     ErrorHandler
