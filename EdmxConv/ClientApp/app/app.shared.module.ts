@@ -10,6 +10,7 @@ import { AppComponent } from "./components/app/app.component";
 import { ConverterComponent } from "./components/converter/index";
 import { CodeblockComponent } from "./components/codeblock/codeblock.component";
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
+import { Config } from "./components/common/Configuration";
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { DropdownComponent } from "./components/dropdown/dropdown.component";
         ])
     ],
     providers: [
-        HighlightJsService
+        HighlightJsService,
+        Config
     ]
 })
 export class AppModuleShared {
