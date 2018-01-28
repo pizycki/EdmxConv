@@ -13,6 +13,7 @@ import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { Config } from "./components/common/Configuration";
 import { ConvertingService } from "./components/converter/converting.service";
 import { ErrorHandler } from "./components/common/ErrorHandler";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [

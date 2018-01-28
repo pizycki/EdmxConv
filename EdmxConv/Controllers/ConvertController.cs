@@ -10,7 +10,7 @@ namespace EdmxConv.Controllers
 {
     public class ConvertController : BaseApiController
     {
-        [HttpPost, Route("")]
+        [HttpPost, Route("api/convert")]
         public IActionResult Convert([FromBody] ConvertParams payload) =>
             ConvertParamsValidationModule.Validate(payload)
                 .OnSuccess(ConvertEdmxArgsModule.CreateArguments)

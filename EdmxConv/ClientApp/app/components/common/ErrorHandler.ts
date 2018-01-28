@@ -54,11 +54,10 @@ class ErrorModel {
     static parse(err: any): ErrorModel {
 
         let model: ErrorModel = new ErrorModel();
-        let errJson = err.json();
 
         model.code = err.status;
         model.type = ErrorTypeHelper.mapToErrorType(err.status);
-        model.text = model.type === ErrorType.Server ? errJson.exceptionMessage : errJson.message;
+        model.text = err._body;
 
         return model;
     }
